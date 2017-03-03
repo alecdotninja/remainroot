@@ -177,7 +177,8 @@ static void tracer(pid_t pid)
 		/* Get the proc_t for the pid. */
 		proc = ohm_search(pid_hm, &pid, sizeof(pid_t));
 		if (!proc)
-			die("ohm_search(%d) failed on traced pid", pid);
+//			die("ohm_search(%d) failed on traced pid", pid);
+			continue;
 		if (proc->pid != pid)
 			die("pid_hm corrupted -- ohm_search(%d).pid = %d\n", pid, proc->pid);
 
