@@ -277,7 +277,7 @@ static void tracer(pid_t pid)
 		 * with errors reported from the kernel.
 		 */
 		if (need_replace && ptrace_return(pid, ret) < 0)
-			die("ptrace_return(%d): %m", ret);
+			die("ptrace_return(%lu): %m", ret);
 	}
 
 	exit(0);
